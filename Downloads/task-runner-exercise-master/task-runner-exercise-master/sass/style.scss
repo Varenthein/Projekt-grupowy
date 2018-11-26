@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+[class*="col-"] {
+    float: left;
+    min-height: 1px;
+    padding: 20px;
+}
+
+/* variables*/
+
+$font-white: #FFF;
+$navbar-grey: #313332;
+
+.box-shadow {
+    -webkit-boxshadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+}
+
+/*extend*/
+
+.upper-white {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.quick-bolder {
+    font-family: quicksand;
+    font-weight: bolder;
+}
+
+.text-shadow {
+    text-shadow: 3px 3px 5px rgba(150, 150, 150, 1);
+
+}
+
+.box-shadow {
+    -webkit-boxshadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.38);
+}
+
+.background-slogan {
+    background: rgba(106, 107, 107, 1);
+    background: -moz-linear-gradient(left, rgba(106, 107, 107, 1) 0%, rgba(87, 87, 87, 0.74) 41%, rgba(84, 86, 87, 0.37) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(106, 107, 107, 1)), color-stop(41%, rgba(87, 87, 87, 0.74)), color-stop(100%, rgba(84, 86, 87, 0.37)));
+    background: -webkit-linear-gradient(left, rgba(106, 107, 107, 1) 0%, rgba(87, 87, 87, 0.74) 41%, rgba(84, 86, 87, 0.37) 100%);
+    background: -o-linear-gradient(left, rgba(106, 107, 107, 1) 0%, rgba(87, 87, 87, 0.74) 41%, rgba(84, 86, 87, 0.37) 100%);
+    background: -ms-linear-gradient(left, rgba(106, 107, 107, 1) 0%, rgba(87, 87, 87, 0.74) 41%, rgba(84, 86, 87, 0.37) 100%);
+    background: linear-gradient(to right, rgba(106, 107, 107, 1) 0%, rgba(87, 87, 87, 0.74) 41%, rgba(84, 86, 87, 0.37) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a6b6b', endColorstr='#545657', GradientType=1);
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: percentage($i / 12);
+    }
+}
+
+@for $i from 1 through 12 {
+    .col-offset-#{$i} {
+        margin-left: percentage($i / 12);
+    }
+}
+
+body {
+    background-color: rgb(170, 170, 170);
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+nav {
+    background-color: $navbar-grey;
+    margin: 0 auto;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    @extend .box-shadow;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+
+        li {
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+
+            a {
+                width: 100px;
+                display: inline-block;
+                line-height: 50px;
+                padding: 0 10px;
+                text-decoration: none;
+                transition: ease-in-out .3s;
+                font-family: quicksand;
+                @extend .upper-white;
+            }
+
+            &:hover ul {
+                display: block;
+            }
+
+            &:hover>a {
+                background-color: #484848;
+                color: #12CBC4;
+            }
+        }
+    }
+
+
+}
+
+.hero {
+    height: 500px;
+    @extend .background-slogan;
+    @extend .box-shadow;
+
+    .slogan {
+        float: left;
+        width: 800px;
+        background: rgba(27, 27, 27, 0.8);
+        padding: 40px 240px 40px 40px;
+        margin-top: 150px;
+        font-size: 50px;
+        font-weight: lighter;
+        @extend .upper-white;
+        @extend .box-shadow;
+        @extend .text-shadow;
+
+
+    }
+
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.test2 {
+    display: flex;
+    flex-wrap: wrap;
+}
